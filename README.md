@@ -9,7 +9,7 @@ Below, we present 10 recommendations for producing good web tools. Next, we pres
 
 This guide proposes 10 simple rules for developing a web tool for bioinformatics and producing an article promoting the tool. They are:
 
-> <b>1. Quickstart</b>
+> <b><a href="#requirement-1-quickstart">1. Quickstart</a></b>
 
 > <b>2. Simple interface</b>
 
