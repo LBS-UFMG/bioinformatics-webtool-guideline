@@ -1,9 +1,9 @@
 # Supplementary material 
 > for <b>“A guide to developing web tools for bioinformatics”</b>
 
-In this document, we present an example application of the "Checklist of important resources for user-friendly web tools".
+In this document, we present an example application of the *"Checklist of important resources for user-friendly web tools"*.
 
-Below, we introduce 10 recommendations for producing good web tools for bioinformatics applications. Then, we present a case study of a tool that meets all the requirements (the PDB website), so it can be considered a good example to be followed.
+Below, we introduce **10 recommendations for producing good web tools for bioinformatics applications**. Then, we present a case study of a tool that meets all the requirements (the PDB website), so it can be considered a good example to be followed.
 
 
 ## The Guideline
@@ -89,7 +89,10 @@ To learn more, the top menu provides the "about" item, from which users can obta
 For example, the user can click on the FAQ page to consult frequently asked questions.
 
 <img src="data/05.png"> 
-Available at https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction
+
+*Available at https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/introduction*
+
+<br>
 
 Furthermore, the PDB provides a special section for training in basic fundamentals in the field of macromolecule analysis. Note that the page interface changes to indicate that it is a different resource than the main website.
 
@@ -100,7 +103,7 @@ They go further by including links to a YouTube channel, with video tutorials on
 
 <img src="data/07.png">
 
-Available at https://www.youtube.com/user/RCSBProteinDataBank 
+*Available at https://www.youtube.com/user/RCSBProteinDataBank*
  
 ### Requirement #5. Allow exploration
 
@@ -108,7 +111,9 @@ Available at https://www.youtube.com/user/RCSBProteinDataBank
 
 **Does the website meet the requirements?** Yes.
 
-**Why?** On the home page, they provide a link to the individual page of an example entry. They display the most recent entries included in the database or link to the editors' chosen "molecule of the month."
+**Why?** On the home page, they provide a link to the individual page of an example entry. They display the most recent entries included in the database or link to the editors' chosen "molecule of the month". 
+
+Users can also click on the numerical value next to the logo to list the most recent structures.
 
  <img src="data/08.png">
 
@@ -116,7 +121,9 @@ After choosing one of the entries, the user is taken to their individual page. A
 
 <img src="data/08_5.png">
 
-Available at https://www.rcsb.org/structure/8WNY
+*Available at https://www.rcsb.org/structure/8WNY*
+
+<br>
 
 For example, the user can navigate to different features of this page through the menu that appears just below the main menu.
 The positioning of these items makes it easier to explore this page.
@@ -145,17 +152,24 @@ Another example is when we try to access a non-existent page.
 In this example, we can see an interactive visualization of protein structure. The user can click on parts of the protein to view details. You can also rotate, translate, and zoom parts of the structure you want to see better. JavaScript plugins provide this visualization.
 
 <img src="data/10.png"> 
-Available at https://www.rcsb.org/3d-view/2LZM?preset=validationReport
+
+*Available at https://www.rcsb.org/3d-view/2LZM?preset=validationReport*
+
+<br>
 
 They also use other more traditional visualizations, such as bar, area and point graphs, to present details of the structure.
 
 <img src="data/11.png">
-Available at https://www.rcsb.org/sequence/2LZM
+
+*Available at https://www.rcsb.org/sequence/2LZM*
+
+<br>
 
 The use of colors is also used in visualizations to indicate the quality of the data (typically, red indicates low quality, while blue indicates high quality).
 
 <img src="data/12.png">
-Available at https://www.rcsb.org/structure/2LZM
+
+*Available at https://www.rcsb.org/structure/2LZM*
 
  
 ### Requirement #8. Export results
@@ -167,7 +181,8 @@ Available at https://www.rcsb.org/structure/2LZM
 **Why?**  The application allows data download and provides links on the main menus.
 
 <img src="data/13.png">
-Available at https://www.rcsb.org/stats/growth/growth-released-structures 
+
+*Available at https://www.rcsb.org/stats/growth/growth-released-structures*
 
 Additionally, on specific pages that display charts, you can download the data that generates the visualization.
 
@@ -186,7 +201,8 @@ Additionally, on specific pages that display charts, you can download the data t
 When clicking on this link, the user is taken to a page that will display details of different contexts in which the database can be cited.
 
 <img src="data/16.png"> 
-Available at https://www.rcsb.org/pages/policies#References
+
+*Available at https://www.rcsb.org/pages/policies#References*
 
  
 ### Requirement #10. Linking article to tool
