@@ -32,7 +32,7 @@ Provide a way for users to explore your data. You can provide a page to explore 
 
 <b>6. Handle errors</b>
 
-Errors are usually unavoidable. When developing a web tool, you must anticipate possible errors and provide the system with ways to prevent them when possible, or handle them and display personalized messages that explain them. Therefore, conduct tests with the development team and external users without prior knowledge of the tool. Additionally, provide ways for users to get in touch if they encounter any errors. If your tool allows data entry, explain how these files should be formatted so that errors do not occur.
+Errors are usually unavoidable. When developing a web tool, you must anticipate possible errors and provide the system with ways to prevent them when possible, or handle them and display personalized messages that explain them. Therefore, conduct tests with the development team and external users without prior knowledge of the tool. Additionally, provide ways for users to get in touch if they encounter any errors. If your tool allows data entry, explain how these files should be formatted.
 
 <b>7. Use visualizations</b>
 
@@ -48,7 +48,7 @@ Indicate in the interface how you want users to cite your tool (you can add it i
 
 <b>10. Linking article to tool</b>
 
-The access link for the tool paper must be visible in the manuscript (preferably in the abstract). Ensure that the link is available and that there are no broken links in the article. Broken links create a bad first impression.
+When writing an article about the tool, it is important to include the access link to the tool in the paper. The access link for the tool paper must be clearly visible in the manuscript (preferably in the abstract). Ensure that the link is available and that there are no broken links in the article. Broken links create a bad first impression.
 
 
 
@@ -70,3 +70,21 @@ Therefore, for each item in the guideline we will present why the PDB web tool m
 <img src="data/01.png">
 
 Available at https://www.rcsb.org/. Acessed at May 18, 2024.
+
+
+### Requirement #2. Simple interface
+
+<code>The interface should be simple and clean. It is recommended to use neutral colors (gray, white, black) for most components. Use color contrast to indicate points you want to draw attention to. You can use warm colors (red, yellow, or orange) to draw attention to specific points. Don't include too many visuals that overwhelm users' perception.</code>
+ 
+<img src="data/02.png">
+
+ 
+### Requirement #3. Explain what this tool is
+
+<code>The interface must indicate the name of the tool (include a logo in the most important region of the page: the top left side) and provide descriptions about it (you can use subtitles, short description texts on the home page and /or include a link to "about" or "help" sections in the main menu).</code>
+ 
+ 
+ <img src="data/03.png">
+<img src="data/04.png">
+
+
