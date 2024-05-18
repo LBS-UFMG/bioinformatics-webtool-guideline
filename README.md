@@ -8,9 +8,7 @@ Therefore, for each item in the guideline we will present why the PDB web tool m
 
 ## Requirement #1. Quickstart
 
-<code>
-The interface should be obvious enough for users to perform a quick analysis. Provide a button on every page that takes users to the page that starts new executions of the tool or that allows them to search and explore data. Use keywords like "new", "explore", "begin", "try", "start", "run", “home", "search", "analysis", and so on.
-</code>
+<code><strong>The interface should be obvious enough for users to perform a quick analysis. Provide a button on every page that takes users to the page that starts new executions of the tool or that allows them to search and explore data. Use keywords like "new", "explore", "begin", "try", "start", "run", “home", "search", "analysis", and so on.
+</strong></code>
 
 <img src="data/01.png">
-<img src="data/01.jpg">
