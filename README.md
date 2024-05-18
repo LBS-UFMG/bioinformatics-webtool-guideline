@@ -2,11 +2,12 @@
 
 In this document, we present an example application of the "Checklist of important resources for user-friendly web tools".
 
-
-
 ## The Guideline
 
-1. Quickstart
+This guide proposes 10 simple rules for developing a web tool for bioinformatics and producing an article promoting the tool. They are:
+
+
+1. *Quickstart*
 
 The interface should be obvious enough for users to perform a quick analysis. Provide a button on every page that takes users to the page that starts new executions of the tool or that allows them to search and explore data. Use keywords like "new", "explore", "begin", "try", "start", "run", “home", "search", "analysis", and so on.
 
