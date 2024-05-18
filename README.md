@@ -11,3 +11,4 @@ The interface should be obvious enough for users to perform a quick analysis. Pr
 </code>
 
 <img src="data/01.png">
+<img src="data/01.jpg">
