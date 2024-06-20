@@ -1,5 +1,9 @@
 # A guide to developing web tools for bioinformatics
 
+~~~
+Supplementary material for the article "Ten simple rules for developing and evaluating user-friendly web tools".
+~~~
+
 In this document, we present an example application of the *"Checklist of important resources for user-friendly web tools"*.
 
 Below, we introduce **10 recommendations for producing good web tools for bioinformatics and computational biology applications**. Then, we present a case study of a tool that meets all the requirements (the PDB website), so it can be considered a good example to be followed.
@@ -30,6 +34,9 @@ The 10 requirements are:
 > <b><a href="#requirement-9-how-to-cite-this-tool">9. How to cite this tool</a></b>
 
 > <b><a href="#requirement-10-linking-article-to-tool">10. Linking article to tool</a></b>
+
+A case study of implementing these 10 simple rules is available <a href="#case-study">here</a>.
+
 
 # Teorical fundamentals for our principles
 
