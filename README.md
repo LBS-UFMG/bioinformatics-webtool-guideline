@@ -2,7 +2,7 @@
 
 In this document, we present an example application of the *"Checklist of important resources for user-friendly web tools"*.
 
-Below, we introduce **10 recommendations for producing good web tools for bioinformatics applications**. Then, we present a case study of a tool that meets all the requirements (the PDB website), so it can be considered a good example to be followed.
+Below, we introduce **10 recommendations for producing good web tools for bioinformatics and computational biology applications**. Then, we present a case study of a tool that meets all the requirements (the PDB website), so it can be considered a good example to be followed.
 
 
 ## The Guideline
@@ -31,6 +31,86 @@ The 10 requirements are:
 
 > <b><a href="#requirement-10-linking-article-to-tool">10. Linking article to tool</a></b>
 
+# Teorical fundamentals for our principles
+
+Our princples are based on the Few's 13 mistakes to avoid when developing dashboards and on the Nielsen's 10 principles for designing interfaces.
+
+
+## Few's 13 mistakes to avoid 
+
+Dashboards are panels used to summarize data sets into single pages. Despite the differences, some insights into their development can be applied to scientific web applications. The main problem when planning a dashboard is squeezing vast amounts of information onto an easily understandable single screen. Stephen Few [1], in the book “Information Dashboard Design”, highlights 13 main mistakes web developers make when designing dashboards. We adapted Few’s mistakes for developing web-effective applications for bioinformatics:
+
+1. Exceeding the boundaries of a single screen: This is not exactly a mistake in the case of scientific web applications. Dashboards need to be concise, clear, and intuitive display mechanisms that summarize information in a small space. Additional information should be accessed on demand. However, this can be complex to implement, even for experienced web developers. Therefore, ensure that your application maintains consistency in the interface on most pages.
+
+2. Providing inadequate context for the data: Suppose your tool displays a certain numerical value due to an analysis. You must give context about what this value means. Is this good, or is this bad? You can use colors or icons (e.g., arrows) to indicate context. Furthermore, you can use explanatory texts such as "the higher, the better" or "values closer to 1 indicate a greater relationship while closer to zero indicate a smaller one". Longer or more detailed explanations on demand could also be considered.
+
+3. Display excessive details: Let us say your program uses the value of pi for some calculation and displays on the screen: 3,14159265358979323846... It may not be necessary to display so many decimal places, i.e., you could display only 3.14 and use the extra decimal places only in the backend for calculations. Alternatively, let us say your program returns a huge table with hundreds of parameters and their methodological details. You can display a summary and allow the user to export the rest of the data if necessary (on-demand access). On the other hand, suppose that your tool presented an error when the user submitted a determined file with a problem. You should not display the entire system error log to the user but rather present the necessary information for the user to understand and recover from the error.
+
+4. Choosing a deficient measure: Suppose your tool will display genome sizes in base pairs (bp). Many developers may feel comfortable using acronyms such as 1 Kb and 1 Mb to indicate 1,000 bp and 1,000,000 bp, respectively, and thus save space. When displaying data from a unique entry, you can represent it however you see fit. Nonetheless, when presenting comparison tables, using different metrics can confuse readers. For example, displaying the size of a 3 Kb virus genome next to a bacteria genome (3 Mb) and human genome (3 Gb) is less impactful than displaying the entire values: virus=3,000; bacteria=3,000,000; human=3,100,000,000.
+
+5. Choosing inappropriate display media: Choosing the wrong graphics and visualizations can complicate your tool users’ lives. For example, 3D pie charts are quite complex to compare (try analyzing a pie chart with many slices). Therefore, you should always look for the correct data visualization technique for each type of problem that your tool addresses.
+Present varieties of meaningless visualizations: You should not include graphics just because they make your tool look nice. Overly displaying visual components hinders understanding of the results you want to display. Sometimes, less is more. 
+
+6. Using poorly designed visualizations: Be careful when displaying visualizations that may create difficulties for users to understand them. For instance, plots without captions or with similar colors.
+
+7. Encoding quantitative data inaccurately: It is possible to tell lies with data by only showing part of the truth (see [6]). Consider, for example, a bar chart showing that your tool achieved an accuracy of 65% while competitor tools achieved 61% and 62%. These values are quite similar, indicating that the tools’ results are not that different. However, imagine what would happen if you displayed a bar chart that starts at 60%. Wow! Now, your results look much higher than those of your competitors. By doing this, you would be changing the perception of the context to give the impression that your results are better than they really are.
+
+8. Organize data poorly: When displaying your results, you should group related information closer together. Messy results can confuse users and be harmful.
+
+9. Highlighting important data ineffectively: Some parts of the screen attract users’ attention the most. For example, the top left part is usually considered one of the most important regions of a web application. Therefore, this is where we should add vital website information, such as the title and logo. The top part is also used to add general access menus, while the left side is generally used to add complementary menus. The footer is a less frequently viewed part but can be used to add less commonly required institutional or contact information.
+
+10. Filling the screen with useless decoration: You might believe that adding a photo of your lab team spinning and shining will make your website more elegant. Remember that this would probably not make sense or be important to users. Including unnecessary visual components will only take up useful space, competing with relevant information for the users’ attention.
+
+11. Improper or excessive use of colors: Color contrast is a property that can be used to draw attention to parts of the screen. However, using many different colors to highlight various parts can have the opposite effect. When a lot of things are highlighted, nothing is actually highlighted. Furthermore, you should take care with certain color combinations that cannot be correctly perceived by people with visual impairments, such as color blindness. For example, when displayed side by side, the colors red, green, and yellow can hardly be differentiated by people with deuteranopia.
+
+12. Design an unattractive visual display: Lastly, your web application must be visually attractive, or it could turn away potential users.
+
+13. Furthermore, Few suggests using Gestalt principles [2] of visual perception for designing dashboards, such as proximity, similarity, enclosure, closure, continuity, and connection. He also suggests using attributes that evoke users' visual perception, such as color, shape, position, and movement [3]. Therefore, consider these elements when designing the interface of your scientific web application. Remember that your primary focus should be to provide the user with a good experience using the tool and with useful data and visualizations. Thus, they can use it as a complementary element in their research.
+
+
+## Nielsen's 10 principles for designing interfaces
+
+In 1994, Jakob Nielsen proposed 10 principles for designing user interfaces [4-5]. In this section, we describe each heuristic and present their application to developing scientific web tools.
+
+1. Visibility of system status: “Ideally, systems should always keep users informed about what is going on through appropriate feedback within a reasonable time”. Thus, whenever users interact with a part of the system, they should be able to understand which part of the system they are at and its status (i.e., what the system is doing). For example, if users ran an experiment, they should be informed whether the execution is currently being carried out, whether it presented any errors, or whether it was completed successfully.
+
+2. Match between system and the real world: “The system should speak the users’ language, with words, phrases, and concepts familiar to the users”. It is inevitable that academic and scientific applications use technical jargon. That is okay if the users are expected to be scientists or academics who understand the terms. If you expect lay users to interact with the system, consider using expressions they would know or have an explanation available for more technical terms. Furthermore, use common terms and words for interface actions. For example, let us say you are building a search component for your application. Use common text expressions (e.g., search/find), common icons (e.g., magnifying glass), and web elements (input field of text type with placeholder).
+
+3. User control and freedom: “Users often choose system functions by mistake and will need a clearly marked ‘emergency exit’ to leave the unwanted state without going through an extended dialogue. Support undo and redo”.  Interrupting an execution can pose significant challenges in bioinformatics web pipelines, as these pipelines rely on the sequential execution of multiple tools. Furthermore, interrupting this flow could cause the experiment to start over from scratch. Thus, in this case, the system should confirm any action that might have a negative impact on users.
+
+4. Consistency and standards: “Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions”. Using an inconsistent layout can increase users' cognitive load, forcing them to always have to learn something new on each screen. Therefore, it is recommended to maintain consistency considering your application (use the same layout structure, style, and colors on most pages) and general standards used for developing web applications. For example, if there is an institutional or project logo, it is usually placed on the top left corner of the screen. The main menu is also added at the top next to the logo (in some cases, the menu may be added to the left corner). The footer is generally used to add links, institutional information, contact forms, usage licenses, or extra tool descriptions.
+
+5. Error prevention: “It is important to prevent problems from occurring. Either eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to the action”. Inform users of any predefined format of input data. In cases in which users’ actions may impact a processing pipeline (e.g., interrupting a sequential execution; as discussed in item 3), inform users of the results of the action and require them to confirm the action. 
+
+6. Recognition rather than recall: “Minimize the user's memory load by making elements, actions, and options visible. The user should not have to remember information from one part of the interface to another. Information required to use the design (e.g., field labels or menu items) should be visible or easily retrievable when needed”. Do not force users to remember all your application’s elements and options. Take, for example, the parameters that users can set before running an application. Many developers of scientific applications rely on their users to already know the parameters from their academic and professional experience or from seeing the description in the tool’s article or documentation. Therefore, they often only provide an acronym for a given property that users need/can set. However, remembering acronyms increases the user's memory load. Interfaces must offer help in context. For instance, web applications can use dialog boxes loaded on demand, such as modals, popovers, lightboxes, tooltips, and dialogs, among other components. 
+
+7. Flexibility and efficiency of use: “Shortcuts (hidden from novice users) may speed up the interaction for the expert user so that the design can cater to both inexperienced and experienced users. Allow users to tailor frequent actions”. Allowing users to customize the interface can speed up their interaction with the system. However, this would involve controlling users’ access to the system, which can increase the complexity of developing the system. It is important to highlight that several web frameworks provide base codes that can facilitate the development of this type of resource. Standard web components such as cookies and sessions can also be used to store common user choices.
+
+8. Aesthetic and minimalist design: “Interfaces should not contain information that is irrelevant or rarely needed. Every extra unit of information in an interface competes with the relevant units of information and diminishes their relative visibility. Furthermore, aesthetically pleasing designs can provide memorable experiences to users”. This is a point that both Nielsen’s and Few’s recommendations have in common:  interfaces should not contain information irrelevant to users’ goals in the context of the system. For example, do not add exaggerated images, animations, or effects when developing your application. Also, do not overload your interface with methodological details described in the paper (if necessary, include these details on demand).
+
+9. Help users recognize, diagnose, and recover from errors: “Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution”. Traditional visual resources, such as red text, could be used to help users identify the errors.
+
+10. Help and documentation: “It’s best if the system doesn’t need any additional explanation. However, it may be necessary to provide documentation to help users understand how to complete their tasks”. Interfaces should be designed to be simple and intuitive. However, you should always provide extra help content and complete documentation explaining how to use the components according to a determined context so that users may refer to it in case they need it to recover from errors or better understand the system.
+
+## Gestalt principles
+
+Gestalt principles are fundamental concepts of Gestalt psychology that explain how humans tend to organize visual elements into cohesive, meaningful units. "Gestalt" is a German word meaning "shape" or "configuration." Gestalt theory emphasizes that the whole is perceived differently than the sum of its parts.
+
+Below, we present seven Gestalt principles:
+
+1. Proximity: Elements that are close to each other tend to be perceived as a group.
+
+2. Similarity: Elements that are similar in appearance, such as similar shape, color, size, also tend to be perceived as part of a group.
+
+3. Continuity: The human mind tends to follow continuous lines and patterns. We prefer to see a continuous line rather than separate segments.
+
+4. Closure: The mind tends to fill in gaps to create a complete image. Imagine, for example, a circle with a missing part is still perceived as a complete circle.
+
+5. Figure-Ground: This principle describes how we distinguish an object from its background.
+
+6. Symmetry and Order: Elements that are symmetrical or that form a pattern are perceived as more orderly and therefore can be identified as a group.
+
+7. Common Fate: Elements that move in the same direction are perceived as more related than elements that move in different directions.
 
 ## Case study
 
@@ -224,73 +304,18 @@ When consulting the publication that describes this tool, we can see that the li
 
 <img src="data/17.png">
 
-# Teorical fundamentals for our principles
-
-Our princples are based on the Few's 13 mistakes to avoid when developing dashboards and on the Nielsen's 10 principles for designing interfaces.
-
-
-## Few's 13 mistakes to avoid 
-
-Dashboards are panels used to summarize data sets into single pages. Despite the differences, some insights into their development can be applied to scientific web applications. The main problem when planning a dashboard is squeezing vast amounts of information onto an easily understandable single screen. Stephen Few [1], in the book “Information Dashboard Design”, highlights 13 main mistakes web developers make when designing dashboards. We adapted Few’s mistakes for developing web-effective applications for bioinformatics:
-
-1. Exceeding the boundaries of a single screen: This is not exactly a mistake in the case of scientific web applications. Dashboards need to be concise, clear, and intuitive display mechanisms that summarize information in a small space. Additional information should be accessed on demand. However, this can be complex to implement, even for experienced web developers. Therefore, ensure that your application maintains consistency in the interface on most pages.
-
-2. Providing inadequate context for the data: Suppose your tool displays a certain numerical value due to an analysis. You must give context about what this value means. Is this good, or is this bad? You can use colors or icons (e.g., arrows) to indicate context. Furthermore, you can use explanatory texts such as "the higher, the better" or "values closer to 1 indicate a greater relationship while closer to zero indicate a smaller one". Longer or more detailed explanations on demand could also be considered.
-
-3. Display excessive details: Let us say your program uses the value of pi for some calculation and displays on the screen: 3,14159265358979323846... It may not be necessary to display so many decimal places, i.e., you could display only 3.14 and use the extra decimal places only in the backend for calculations. Alternatively, let us say your program returns a huge table with hundreds of parameters and their methodological details. You can display a summary and allow the user to export the rest of the data if necessary (on-demand access). On the other hand, suppose that your tool presented an error when the user submitted a determined file with a problem. You should not display the entire system error log to the user but rather present the necessary information for the user to understand and recover from the error.
-
-4. Choosing a deficient measure: Suppose your tool will display genome sizes in base pairs (bp). Many developers may feel comfortable using acronyms such as 1 Kb and 1 Mb to indicate 1,000 bp and 1,000,000 bp, respectively, and thus save space. When displaying data from a unique entry, you can represent it however you see fit. Nonetheless, when presenting comparison tables, using different metrics can confuse readers. For example, displaying the size of a 3 Kb virus genome next to a bacteria genome (3 Mb) and human genome (3 Gb) is less impactful than displaying the entire values: virus=3,000; bacteria=3,000,000; human=3,100,000,000).
-
-5. Choosing inappropriate display media: Choosing the wrong graphics and visualizations can complicate your tool users’ lives. For example, 3D pie charts are quite complex to compare (try analyzing a pie chart with many slices). Therefore, you should always look for the correct data visualization technique for each type of problem that your tool addresses.
-Present varieties of meaningless visualizations: You should not include graphics just because they make your tool look nice. Overly displaying visual components hinders understanding of the results you want to display. Sometimes, less is more. 
-
-6. Using poorly designed visualizations: Be careful when displaying visualizations that may create difficulties for users to understand them. For instance, plots without captions or with similar colors.
-
-7. Encoding quantitative data inaccurately: It is possible to tell lies with data by only showing part of the truth (see [6]). Consider, for example, a bar chart showing that your tool achieved an accuracy of 65% while competitor tools achieved 61% and 62%. These values are quite similar, indicating that the tools’ results are not that different. However, imagine what would happen if you displayed a bar chart that starts at 60%. Wow! Now, your results look much higher than those of your competitors. By doing this, you would be changing the perception of the context to give the impression that your results are better than they really are.
-
-8. Organize data poorly: When displaying your results, you should group related information closer together. Messy results can confuse users and be harmful.
-
-9. Highlighting important data ineffectively: Some parts of the screen attract users’ attention the most. For example, the top left part is usually considered one of the most important regions of a web application. Therefore, this is where we should add vital website information, such as the title and logo. The top part is also used to add general access menus, while the left side is generally used to add complementary menus. The footer is a less frequently viewed part but can be used to add less commonly required institutional or contact information.
-
-10. Filling the screen with useless decoration: You might believe that adding a photo of your lab team spinning and shining will make your website more elegant. Remember that this would probably not make sense or be important to users. Including unnecessary visual components will only take up useful space, competing with relevant information for the users’ attention.
-
-11. Improper or excessive use of colors: Color contrast is a property that can be used to draw attention to parts of the screen. However, using many different colors to highlight various parts can have the opposite effect. When a lot of things are highlighted, nothing is actually highlighted. Furthermore, you should take care with certain color combinations that cannot be correctly perceived by people with visual impairments, such as color blindness. For example, when displayed side by side, the colors red, green, and yellow can hardly be differentiated by people with deuteranopia.
-
-12. Design an unattractive visual display: Lastly, your web application must be visually attractive, or it could turn away potential users.
-
-13. Furthermore, Few suggests using Gestalt principles [2] of visual perception for designing dashboards, such as proximity, similarity, enclosure, closure, continuity, and connection. He also suggests using attributes that evoke users' visual perception, such as color, shape, position, and movement [3]. Therefore, consider these elements when designing the interface of your scientific web application. Remember that your primary focus should be to provide the user with a good experience using the tool and with useful data and visualizations. Thus, they can use it as a complementary element in their research.
-
-
-## Nielsen's 10 principles for designing interfaces
-
-In 1994, Jakob Nielsen proposed 10 principles for designing user interfaces [4-5]. In this section, we describe each heuristic and present their application to developing scientific web tools.
-
-1. Visibility of system status: “Ideally, systems should always keep users informed about what is going on through appropriate feedback within a reasonable time”. Thus, whenever users interact with a part of the system, they should be able to understand which part of the system they are at and its status (i.e., what the system is doing). For example, if users ran an experiment, they should be informed whether the execution is currently being carried out, whether it presented any errors, or whether it was completed successfully.
-
-2. Match between system and the real world: “The system should speak the users’ language, with words, phrases, and concepts familiar to the users”. It is inevitable that academic and scientific applications use technical jargon. That is okay if the users are expected to be scientists or academics who understand the terms. If you expect lay users to interact with the system, consider using expressions they would know or have an explanation available for more technical terms. Furthermore, use common terms and words for interface actions. For example, let us say you are building a search component for your application. Use common text expressions (e.g., search/find), common icons (e.g., magnifying glass), and web elements (input field of text type with placeholder).
-
-3. User control and freedom: “Users often choose system functions by mistake and will need a clearly marked ‘emergency exit’ to leave the unwanted state without going through an extended dialogue. Support undo and redo”.  Interrupting an execution can pose significant challenges in bioinformatics web pipelines, as these pipelines rely on the sequential execution of multiple tools. Furthermore, interrupting this flow could cause the experiment to start over from scratch. Thus, in this case, the system should confirm any action that might have a negative impact on users.
-
-4. Consistency and standards: “Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform and industry conventions”. Using an inconsistent layout can increase users' cognitive load, forcing them to always have to learn something new on each screen. Therefore, it is recommended to maintain consistency considering your application (use the same layout structure, style, and colors on most pages) and general standards used for developing web applications. For example, if there is an institutional or project logo, it is usually placed on the top left corner of the screen. The main menu is also added at the top next to the logo (in some cases, the menu may be added to the left corner). The footer is generally used to add links, institutional information, contact forms, usage licenses, or extra tool descriptions.
-
-5. Error prevention: “It is important to prevent problems from occurring. Either eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to the action”. Inform users of any predefined format of input data. In cases in which users’ actions may impact a processing pipeline (e.g., interrupting a sequential execution; as discussed in item 3), inform users of the results of the action and require them to confirm the action. 
-
-6. Recognition rather than recall: “Minimize the user's memory load by making elements, actions, and options visible. The user should not have to remember information from one part of the interface to another. Information required to use the design (e.g., field labels or menu items) should be visible or easily retrievable when needed”. Do not force users to remember all your application’s elements and options. Take, for example, the parameters that users can set before running an application. Many developers of scientific applications rely on their users to already know the parameters from their academic and professional experience or from seeing the description in the tool’s article or documentation. Therefore, they often only provide an acronym for a given property that users need/can set. However, remembering acronyms increases the user's memory load. Interfaces must offer help in context. For instance, web applications can use dialog boxes loaded on demand, such as modals, popovers, lightboxes, tooltips, and dialogs, among other components. 
-
-7. Flexibility and efficiency of use: “Shortcuts (hidden from novice users) may speed up the interaction for the expert user so that the design can cater to both inexperienced and experienced users. Allow users to tailor frequent actions”. Allowing users to customize the interface can speed up their interaction with the system. However, this would involve controlling users’ access to the system, which can increase the complexity of developing the system. It is important to highlight that several web frameworks provide base codes that can facilitate the development of this type of resource. Standard web components such as cookies and sessions can also be used to store common user choices.
-
-8. Aesthetic and minimalist design: “Interfaces should not contain information that is irrelevant or rarely needed. Every extra unit of information in an interface competes with the relevant units of information and diminishes their relative visibility. Furthermore, aesthetically pleasing designs can provide memorable experiences to users”. This is a point that both Nielsen’s and Few’s recommendations have in common:  interfaces should not contain information irrelevant to users’ goals in the context of the system. For example, do not add exaggerated images, animations, or effects when developing your application. Also, do not overload your interface with methodological details described in the paper (if necessary, include these details on demand).
-
-9. Help users recognize, diagnose, and recover from errors: “Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution”. Traditional visual resources, such as red text, could be used to help users identify the errors.
-
-10. Help and documentation: “It’s best if the system doesn’t need any additional explanation. However, it may be necessary to provide documentation to help users understand how to complete their tasks”. Interfaces should be designed to be simple and intuitive. However, you should always provide extra help content and complete documentation explaining how to use the components according to a determined context so that users may refer to it in case they need it to recover from errors or better understand the system.
 
 
 # References
 
 [1] Few, Stephen. Information Dashboard Design: The Effective Visual Communication of Data. N.p., Oreilly & Associates Incorporated, 2006.
+
 [2] WONG, Bang. Points of view: Gestalt principles (Part 1). nature methods, v. 7, n. 11, p. 863, 2010.
+
 [3] FEW, Stephen; EDGE, Perceptual. The visual perception of variation in data displays. Perceptual Edge, p. 1-15, 2016.
+
 [4] Nielsen, Jakob. 10 Usability Heuristics for User Interface Design (1994; updated in 2020). Available at https://www.nngroup.com/articles/ten-usability-heuristics/.
+
 [5] Nielsen, J. (1994). Heuristic evaluation. In Nielsen, J., and Mack, R.L. (Eds.), Usability Inspection Methods, John Wiley & Sons, New York, NY.
+
 [6] Huff, Darrell. How to lie with statistics. United Kingdom, Norton, 1954.
