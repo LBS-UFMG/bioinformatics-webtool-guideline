@@ -1,7 +1,7 @@
 # A guide to developing web tools for bioinformatics
 
 ~~~
-Supplementary material for the article "Ten simple rules for developing and evaluating user-friendly web tools".
+Supplementary material for "Ten simple rules for developing and evaluating user-friendly web tools".
 ~~~
 
 In this document, we present an example application of the *"Checklist of important resources for user-friendly web tools"*.
